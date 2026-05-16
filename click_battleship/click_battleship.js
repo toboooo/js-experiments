@@ -128,4 +128,4 @@ function init_game() {
 	gameData.generateShips();
 }
 
-window.onload = init_game();
+window.onload = init_game;
