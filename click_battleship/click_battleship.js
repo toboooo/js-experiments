@@ -33,7 +33,7 @@ var gameData = {
 				* (this.boardSize - this.shipLength + 1));
 			startCol = Math.floor(Math.random() * this.boardSize);
 		}
-		var shipLocation = [];
+		var shipLocation = new Array();
 		for (var i = 0; i < this.shipLength; ++i) {
 			if (direction == 0) {
 				shipLocation.push(startRow + "" + (startCol + i));
