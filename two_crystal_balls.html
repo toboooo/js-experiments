@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<title>Two Crystal Balls Problem</title>
+</head>
+<body>
+<script>
+function find_floor(N, w, f) {
+	var iter = 0;
+	var i;
+	for (i = w; i < N; i += w) {
+		++iter;
+		console.log("Dropping at " + i + "...");
+		if (i >= f) {
+			console.log("SMASH! (at " + i + ")");
+			break;
+		}
+	}
+	var j;
+	for (j = i - w + 1; j < i; ++j) {
+		++iter;
+		console.log("Dropping at " + j + "...");
+		if (j >= f) {
+			console.log("SMASH! (at " + j + ")");
+			console.log("Found f = " + j + " in " + iter + " iterations.");
+			return;
+		}
+	}
+	console.log("Found f = " + j + " in " + iter + " iterations.");
+	return;
+}
+
+const N = 100;
+const w = Math.sqrt(N);
+for (var f = 0; f <= 100; ++f) {
+	find_floor(N, w, f);
+}
+</script>
+</body>
+</html>
